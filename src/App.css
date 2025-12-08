@@ -1,0 +1,117 @@
+body{
+  background-color: #0F0E0E;
+}
+
+.hero{
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  padding: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.content{
+  max-width: 600px;
+}
+
+.rating{
+  font-size: 18px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.title{
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.desc{
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.watch-btn{
+  background: red;
+  padding: 12px 28px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+.add-btn{
+  background: ghostwhite;
+  padding: 12px 28px;
+  color: black;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-card{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie-card:hover{
+  opacity: 1;
+}
+
+.card-overlay{
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+/* === CUSTOM ANTD ARROWS === */
+.ant-carousel .slick-prev:before,
+.ant-carousel .slick-next:before {
+  font-size: 40px;
+  color: white;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  z-index: 10;
+  margin: 20px;
+}
+
+/* Card */
+span{
+  color: yellow;
+}
