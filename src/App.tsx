@@ -104,7 +104,7 @@ export default function App() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div>
+          <div className="mt-16">
             <Carousel arrows infinite={true} fade autoplay>
               {popularMovies.map((movie: any) => (
                 <div key={movie.id}>
@@ -114,14 +114,14 @@ export default function App() {
                       backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
                     }}
                   >
-                    <div className="overlay">
+                    <div className="overlay ">
                       <div className="content">
-                        <p className="rating">
+                        <p className="opacity: 0.9 mb-4 text-xl">
                           ⭐ {movie.vote_average.toFixed(1)}
                         </p>
-                        <h1 className="title">{movie.title}</h1>
+                        <h1 className="text-5xl md:text-7xl font-bold mb-4">{movie.title}</h1>
                         <p className="desc">
-                          {limitSentence(movie.overview, 2)}
+                          {limitSentence(movie.overview, 1)}
                         </p>
 
                         <div className="flex gap-5">
@@ -170,12 +170,7 @@ export default function App() {
 
             {/* Now Playing */}
             <div
-              className="mx-4 mb-8 movie-card"
-              style={{
-                display: "grid",
-                gap: "10px",
-                gridTemplateColumns: "repeat(4, 1fr)",
-              }}
+              className="mx-4 mb-8 grid grid-cols-1 md:grid-cols-4 gap-10"
             >
               {nowPlayingMovies.map((movie: any) => (
                 <Link to={`/detail/${movie.id}`} key={movie.id}>
@@ -253,12 +248,7 @@ export default function App() {
             />
 
             <div
-              className="mx-4 mb-8"
-              style={{
-                display: "grid",
-                gap: "10px",
-                gridTemplateColumns: "repeat(4, 1fr)",
-              }}
+              className="mx-4 mb-8 grid grid-cols-1 md:grid-cols-4 gap-10"
             >
               {comingSoonMovies.map((movie: any) => (
                 <Link to={`/detail/${movie.id}`} key={movie.id}>

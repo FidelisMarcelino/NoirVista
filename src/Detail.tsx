@@ -60,7 +60,7 @@ export default function DetailPage() {
 
   return (
     <>
-      <div style={{ padding: "20px", color: "white", marginTop: "30px"}}>
+      <div className="p-6 text-white mt-10">
         <Link to="/home">
           <button className="bg-red-700 p-1 rounded font-bold cursor-pointer">
             Back
@@ -74,9 +74,9 @@ export default function DetailPage() {
           <FontAwesomeIcon icon={favorite ? fasBookmark : farBookmark} />
         </button>
 
-        <h1 style={{ fontSize: "32px", fontWeight: "bold" }}>{movie.title}</h1>
+        <h1 className="text-3xl font-bold my-2">{movie.title}</h1>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-col md:flex-row">
           <img
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             alt={movie.title}

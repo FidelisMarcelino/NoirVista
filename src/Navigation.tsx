@@ -7,11 +7,11 @@ export default function Navigation() {
     <>
       <div className="flex items-center justify-between p-3 rounded-b text-white fixed z-50 w-full bg-[#0F0E0E]">
         <div className="flex gap-2 items-center">
-          <Link to="/">
+          <Link to="/home">
             <img src="Logo.png" alt="Logo" className="w-auto h-8" />
           </Link>
 
-          <Link to="home">
+          <Link to="/home">
             <button
               className={`${
                 loc.pathname.startsWith("/home") ? "underline text-white" : ""

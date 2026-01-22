@@ -12,10 +12,10 @@ export default function Favorite(){
     }, [])
 
     return(
-        <div style={{color: "white"}}>
-            <h1>Favorite Movies</h1>
+        <div className="text-white mt-12">
+            <h1 className="text-center font-semibold text-2xl mb-2">Favorite Movies</h1>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {movies.length === 0 && <p>Belum ada film tersimpan.</p>}
 
                 {movies.map((m:any) => (

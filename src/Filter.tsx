@@ -100,7 +100,7 @@ export default function Filter() {
             fetchMoviesByGenre(genreId);
           }}
         >
-          <option value="">Filter by Genre</option>
+          <option value="">All Genre</option>
           {genres.map((g) => (
             <option key={g.id} value={g.id}>
               {g.name}
@@ -109,12 +109,12 @@ export default function Filter() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4 mt-4">
         {nowPlayingMovies.map((movie: any) => (
           <Link to={`/detail/${movie.id}`}>
             <div
               key={movie.id}
-              className="relative bg-[#1a1a1a] p-3 rounded-lg text-white h-110 flex flex-col"
+              className="relative bg-[#1a1a1a] p-3 rounded-lg text-white h-90 flex flex-col"
             >
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
