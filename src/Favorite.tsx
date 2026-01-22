@@ -12,7 +12,7 @@ export default function Favorite(){
     }, [])
 
     return(
-        <div className="text-white mt-12">
+        <div className="text-white">
             <h1 className="text-center font-semibold text-2xl mb-2">Favorite Movies</h1>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

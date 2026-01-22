@@ -1,8 +1,7 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// ⬇ Ambil dari .env
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -12,9 +11,15 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// Init Firebase
-const app = initializeApp(firebaseConfig);
+// Cegah double initialize (INI KUNCI NYA)
+const app = getApps().length === 0
+  ? initializeApp(firebaseConfig)
+  : getApp();
 
-// Export Auth & Firestore
+  
+if (!firebaseConfig.apiKey) {
+  throw new Error("Firebase API Key is missing");
+}
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);

@@ -84,7 +84,7 @@ export default function Filter() {
 
   return (
     <>
-      <div className="flex justify-center mt-16">
+      <div className="flex justify-center">
         <select
           className="p-2 bg-black text-white rounded cursor-pointer"
           onChange={(e) => {

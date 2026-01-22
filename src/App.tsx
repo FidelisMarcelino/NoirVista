@@ -104,7 +104,7 @@ export default function App() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div className="mt-16">
+          <div>
             <Carousel arrows infinite={true} fade autoplay>
               {popularMovies.map((movie: any) => (
                 <div key={movie.id}>

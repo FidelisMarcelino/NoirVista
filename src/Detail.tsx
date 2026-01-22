@@ -60,7 +60,7 @@ export default function DetailPage() {
 
   return (
     <>
-      <div className="p-6 text-white mt-10">
+      <div className="p-6 text-white">
         <Link to="/home">
           <button className="bg-red-700 p-1 rounded font-bold cursor-pointer">
             Back
