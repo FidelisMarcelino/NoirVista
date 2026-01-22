@@ -16,7 +16,7 @@ const apiKey = import.meta.env.VITE_TMDB_API_KEY;
 export default function Filter() {
   const [genres, setGenres] = useState<Genre[]>([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState<any[]>([]);
-  const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
+  const [, setSelectedGenre] = useState<number | null>(null);
 
   const [favorite, setFavorite] = useState(false);
 
