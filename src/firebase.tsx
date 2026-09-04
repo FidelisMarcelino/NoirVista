@@ -11,15 +11,19 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
+const requiredConfig = Object.entries(firebaseConfig).filter(([, value]) => !value);
+if (requiredConfig.length > 0) {
+  throw new Error(
+    `Missing Firebase environment variables: ${requiredConfig
+      .map(([key]) => key)
+      .join(", ")}`,
+  );
+}
+
 // Cegah double initialize (INI KUNCI NYA)
 const app = getApps().length === 0
   ? initializeApp(firebaseConfig)
   : getApp();
-
-  
-if (!firebaseConfig.apiKey) {
-  throw new Error("Firebase API Key is missing");
-}
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
