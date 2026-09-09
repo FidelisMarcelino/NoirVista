@@ -51,12 +51,15 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-black text-white p-2">
       <form
         onSubmit={handleSubmit}
+        autoComplete="off"
         className="w-full max-w-md bg-[#111] p-6 rounded-lg space-y-4"
       >
         <h1 className="text-2xl font-bold text-center">Register</h1>
 
         <input
           type="text"
+          name="username"
+          autoComplete="off"
           placeholder="Username"
           className="w-full p-2 rounded bg-gray-800"
           value={username}
@@ -66,6 +69,8 @@ export default function Register() {
 
         <input
           type="email"
+          name="register-email"
+          autoComplete="off"
           placeholder="Email"
           className="w-full p-2 rounded bg-gray-800"
           value={email}
@@ -75,6 +80,8 @@ export default function Register() {
 
         <input
           type="password"
+          name="register-password"
+          autoComplete="new-password"
           placeholder="Password"
           className="w-full p-2 rounded bg-gray-800"
           value={password}
@@ -84,6 +91,8 @@ export default function Register() {
 
         <input
           type="password"
+          name="register-confirm-password"
+          autoComplete="new-password"
           placeholder="Confirm Password"
           className="w-full p-2 rounded bg-gray-800"
           value={confirmPassword}
